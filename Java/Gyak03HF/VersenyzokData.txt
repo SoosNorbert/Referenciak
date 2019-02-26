@@ -1,6 +1,0 @@
-Dora,21,10,10
-Anna,23,8,9
-Beatrix,19,9,7
-Orsolya,24,9,10
-Test01,30,1,1
-Test02,15,1,1
