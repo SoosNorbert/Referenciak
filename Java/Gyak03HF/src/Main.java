@@ -17,13 +17,11 @@ public class Main {
 
     //VersenyzokData.txt elérését be kell állítani.
     private static final String FILE_NAME = "E:\\Java Projects\\Gyak03HF\\VersenyzokData.txt";
-    private static final int VERSENYZOK_COUNT = ReadFile.getVersenyzokCount();
-    private static Versenyzok[] versenyzok;
+    private static final int VERSENYZOK_COUNT = ReadFile.getVersenyzokCount(FILE_NAME);
+    private static Versenyzok[] versenyzok = new Versenyzok[VERSENYZOK_COUNT];
 
     public static void main(String[] args) {
         ReadFile.readFileByLine(FILE_NAME, versenyzok);
-
-        versenyzok = new Versenyzok[VERSENYZOK_COUNT];
 
         for (int i = 0; i < versenyzok.length; i++) {
             versenyzok[i].setPontszam(Versenyzok.calculatePoints(versenyzok[i]));

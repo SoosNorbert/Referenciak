@@ -8,7 +8,19 @@ public class ReadFile {
 
     private static int versenyzokCount = 0;
 
-    public static int getVersenyzokCount() {
+    public static int getVersenyzokCount(String filePath) {
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(filePath));
+            String line = reader.readLine();
+            while (line != null) {
+                versenyzokCount++;
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return versenyzokCount;
     }
 
